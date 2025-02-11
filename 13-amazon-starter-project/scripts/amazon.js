@@ -63,6 +63,8 @@ AddToCartBtn.forEach((value)=>{
         matching=item;
     }
   })
+  let QuantitySelector=document.querySelector(`.js-quantity-selector-${productId}`);
+  QuantitySelector=Number(QuantitySelector.value);
   if(matching){
     matching.quantity+=1;
   }else{
@@ -72,7 +74,8 @@ AddToCartBtn.forEach((value)=>{
     })
   }
   console.log(cart)
-  cartQuantity+=1;
+
+  cartQuantity+=QuantitySelector;
   document.querySelector('.js-cart-quantity').innerHTML=cartQuantity;
   })
 
