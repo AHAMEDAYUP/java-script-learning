@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- practice 1 -->
+
+    <!-- lets create a simple youtube subscribe button -->
+
+    <p >Youtube subscribe Button </p>
+    <button  class="btn-1" onclick="
+    subscribe();">subscribe</button>
+    
+    <!--    lets create a shipping calculator -->
+    
+        <p>Order under $40 : shipping charge = $10</p>
+        <p>order above $40 : free shipping</p>
+        <input  placeholder="enter the amount" class="input1"> <button onclick="shipping()">calculate</button>
+        <p class=total-amount></p>
+
+</body>
+<script>
+    
+    function subscribe(){
+        let a=document.querySelector('.btn-1');
+        console.log(a);
+    a.innerHTML==='subscribe'?a.innerHTML='subscribed':a.innerHTML='subscribe'
+    }
+    
+    function shipping(){
+   const b=document.querySelector('.input1')
+    let c=document.querySelector('.total-amount')
+   let cost = Number(b.value)
+//    if(cost <40){
+//     cost+=10
+//    }
+//    c.innerHTML=`${cost+10}`
+cost<40?c.innerHTML=`${cost+10}`:c.innerHTML=`${cost}`    
+
+}
+const b=document.querySelector('.input1');
+b.addEventListener('keydown',function(event){
+    if(event.key==='Enter'){
+        shipping();
+    }
+});
+
+
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- rock paper scissor code below -->
+
+   
+   <button
+   onclick="
+   
+    
+  playerMove('stone');
+   
+   "
+   >rock</button>
+   <button
+   onclick="
+   
+//    const computerChoice=compMove();
+    playerMove('paper');
+
+   
+   
+  "
+   >paper</button>
+   <button
+   onclick="
+    
+   
+  playerMove('scissor');
+  
+   
+  "
+   >scissor</button>
+</body>
+
+<script>
+    function compMove(){
+        const rN=Math.random();
+        let computerChoice='';
+
+   if(rN>=0 && rN<1/3){
+       computerChoice='stone';
+   }else if(rN>=1/3 && rN<2/3){
+       computerChoice='paper';
+   }
+   else if(rN>=2/3 && rN<1){
+       computerChoice='scissor';
+   }
+
+   return computerChoice;
+
+    }
+    function playerMove(myMove){
+        const computerChoice=compMove();
+        if(myMove==='stone'){
+            let result='';
+    if(computerChoice==='stone'){
+        result='tie';
+    }else if(computerChoice==='paper'){
+        result='lose';
+    }else if(computerChoice==='scissor'){
+        result='win';
+    
+    }
+    alert(`your move is ${myMove},the computer move is ${computerChoice} , the result gonna be ${result}`);
+} 
+    else if(myMove==='paper'){
+        let result='';
+   if(computerChoice==='stone'){
+       result='win';
+   }else if(computerChoice==='paper'){
+       result='tie';
+   }else if(computerChoice==='scissor'){
+       result='lose';
+   
+   }
+   alert(`your move is ${myMove},the computer move is ${computerChoice} , the result gonna be ${result}`);
+    } else if(myMove==='scissor'){
+        let result='';
+   if(computerChoice==='stone'){
+       result='lose';
+   }else if(computerChoice==='paper'){
+       result='win';
+   }else if(computerChoice==='scissor'){
+       result='tie';
+   
+   }
+   alert(`your move is ${myMove},the computer move is ${computerChoice} , the result gonna be ${result}`);
+    }
+
+}   
+</script>
+</html>
+

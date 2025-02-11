@@ -1,0 +1,49 @@
+
+.btn-1{
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size:18px;
+  border:none;
+  background-color: rgb(255, 0, 0);
+  border-radius: 20px;
+  transition: 0.4s ease-in;
+
+}
+p:nth-child(1){
+  font-size:20px;
+  font-weight: bold;
+}
+.active-subscribe-btn{
+  background-color: black;
+  color:white;
+}
+P:nth-child(2),p:nth-child(3){
+  font-size: 20px;
+  font-weight:bold;
+  margin-bottom: 10px;
+}
+.input1{
+padding:20px 10px;
+border:none;
+border:1px solid rgb(167, 167, 167);
+border-radius: 29px;
+margin-right: 20px;
+font-size: 18px;
+}
+p:nth-child(3){
+  font-size: 20px;
+  font-weight:bold;
+  margin-bottom: 10px;
+}
+.total-amount{
+  font-size: 20px;;
+}
+.calculate-btn{
+  padding:20px 20px;
+  border-radius: 30px;
+  font-size:18px;
+  border:1px solid rgb(167, 167, 167);
+}
+.calculate-btn:active{
+  scale: 0.9;
+}

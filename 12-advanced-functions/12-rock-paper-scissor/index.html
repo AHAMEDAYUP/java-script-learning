@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+      </head>
+      <body>
+        <!-- lets create a simple youtube subscribe button -->
+
+        <!--  rock paper scissors code below -->
+
+        <button
+          class="btn rock"
+          onclick="
+   
+    
+  playerMove('rock');
+    update(res);
+   "
+        >
+          <img src="./rock-emoji.png" alt="" class="emoji" />
+        </button>
+        <button
+          class="btn paper"
+          onclick="
+   
+
+    playerMove('paper');
+    update(res);
+   
+   
+  "
+        >
+          <img src="./paper-emoji.png" alt="" class="emoji" />
+        </button>
+        <button
+          class="btn scissors"
+          onclick="
+    
+   
+  playerMove('scissors');
+  update(res);
+   
+  "
+        >
+          <img src="./scissors-emoji.png" alt="" class="emoji" />
+        </button>
+        <p class="moves"></p>
+        <p class="results"></p>
+        <p class="updatescore"></p>
+        <button class="reset-btn">reset value</button>
+        <button class="auto-play-btn">Auto Play</button>
+        <p class="reset-message">
+          are you sure want to rest the score?
+          <button class="yes-btn">yes</button>
+          <button class="no-btn">no</button>
+        </p>
+        <script src="./script.js"></script>
+      </body>
+    </html>
+  </body>
+</html>

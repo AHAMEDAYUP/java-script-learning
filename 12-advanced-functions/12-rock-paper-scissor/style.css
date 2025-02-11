@@ -1,0 +1,62 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+.emoji{
+width: 100px;
+height: 100px;
+background: transparent;
+}
+.btn{
+  margin:20px 30px;
+  padding:20px 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.reset-btn,.auto-play-btn{
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  padding: 20px 25px;
+  margin:20px;
+  border:none;
+  border-radius: 30px;;
+}
+.moves{
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
+  margin:30px;
+}
+.results{
+  font-size:40px;
+  font-weight:700;
+  color:white;
+  margin:30px;
+}
+.updatescore{
+  font-size:40px;
+  font-weight:700;
+  color:white;
+  margin:30px;
+}
+.reset-message{
+  color:white;
+  font-size: 30px;
+  margin: 30px;
+  display: none;
+}
+.yes-btn,.no-btn{
+  cursor: pointer;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  padding: 20px 25px;
+  margin:10px;
+  border:none;
+  border-radius: 30px;
+}

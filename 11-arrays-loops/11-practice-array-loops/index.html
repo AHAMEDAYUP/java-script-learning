@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //changing the the last index
+      let arr1 = [10, 12, 14, 16];
+      arr1[arr1.length - 1] = 2;
+      console.log(arr1);
+      //function to console.log() the last index
+      function lastVALUE(array) {
+        let lastIndex = array.length - 1;
+        console.log(array[lastIndex]);
+      }
+      lastVALUE(arr1);
+      //swap first index and last index
+      function swapARRAY(array) {
+        let lastvalue = array[array.length - 1];
+        let firstvalue = array[0];
+        array[0] = lastvalue;
+        array[array.length - 1] = firstvalue;
+        console.log(array);
+      }
+      swapARRAY(arr1);
+      let arr2 = [1, 2, 3, 4];
+      swapARRAY(arr2);
+      //create a for loop from 0 to 10 by 2{the output gonna be 0,2,4,,8,10}
+      for (let i = 0; i < 10; i += 2) {
+        console.log(i);
+      }
+      // from 5 to 0 using for loop
+      for (let i = 5; i >= 0; i--) {
+        console.log(i);
+      }
+      //create a while loop from 0 to 10 by 2{the output gonna be 0,2,4,,8,10}
+      let i = 0;
+      while (i <= 10) {
+        console.log(i);
+        i = i + 2;
+      }
+      // from 5 to 0 using while-loop
+      let i2 = 5;
+      while (i2 >= 0) {
+        console.log(i2);
+        i2--;
+      }
+      //lets create an array using for loop
+      let arr = [];
+      for (let i = 0; i <= 5; i++) {
+        arr.push(i);
+      }
+      console.log(arr);
+      //create another new-array it contains the previous array output increased by 1 or add by 1
+      let newArray = [];
+      for (let i = 0; i < arr.length; i++) {
+        let value = arr[i] + 1;
+
+        newArray.push(value);
+      }
+      console.log(newArray);
+      // creataing func for adding1 on array
+      function addONEarray(array) {
+        let newArray = [];
+        for (let i = 0; i < array.length; i++) {
+          let value = array[i] + 1;
+
+          newArray.push(value);
+        }
+        console.log(newArray);
+      }
+      let array11 = [5, 6, 7, 8, 9];
+      addONEarray(array11);
+      //
+      function addNUM(array, num) {
+        let newArray = [];
+        for (let i = 0; i < array.length; i++) {
+          let value = array[i] + num;
+
+          newArray.push(value);
+        }
+        console.log(newArray);
+      }
+      //
+      addNUM(array11, 2);
+      function addARRAYS(array1, array2) {
+        let newArray = [];
+        for (i = 0; i < array1.length; i++) {
+          let value = array1[i] + array2[i];
+          newArray.push(value);
+        }
+        console.log(newArray);
+      }
+      addARRAYS([1, 2, 3], [1, 2, 3]);
+      //
+      function countPOSITIVE(array) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+          let value = array[i];
+          if (value > 0) {
+            count++;
+          }
+        }
+
+        return console.log(count);
+      }
+      countPOSITIVE([-1, 1, 1]);
+      //
+      function minMAX(array) {
+        let result = {
+          min: 0,
+          max: 0,
+        };
+        for (i = 0; i < array.length; i++) {
+          let value = array[i];
+          if (value > result.max) {
+            result.max = value;
+          } else if (value < result.min) {
+            result.min = value;
+          }
+        }
+        console.log(array);
+        return console.log(result);
+      }
+      minMAX([-1, 2, 3]);
+      //
+      function minMAXpro(array) {
+        let result = {
+          min: null,
+          max: null,
+        };
+        for (i = 0; i < array.length; i++) {
+          let value = array[i];
+          if (result.max === null || value > result.max) {
+            result.max = value;
+          }
+          if (result.min === null || value < result.min) {
+            result.min = value;
+          }
+        }
+        console.log(array);
+        return console.log(result);
+      }
+      minMAXpro([1, 2, 3]);
+      minMAXpro([3]);
+      //
+      function countWORD(array) {
+        let result = {};
+        for (i = 0; i < array.length; i++) {
+          let value = array[i];
+          if (!result[value]) {
+            result[value] = 1;
+          } else {
+            result[value]++;
+          }
+        }
+        return console.log(result);
+      }
+      countWORD(["apple", "ball", "ball"]);
+      //
+      function findSearchIndex(array) {
+        let index = -1;
+        for (let i = 0; i < array.length; i++) {
+          let value = array[i];
+          if (value === "search") {
+            index = i;
+            break;
+          }
+        }
+        console.log(index);
+      }
+      findSearchIndex(["apple", "apple"]);
+      findSearchIndex(["apple", "apple", "search", "search"]);
+      //
+      function FindIndex(array, word) {
+        let index = -1;
+        for (let i = 0; i < array.length; i++) {
+          let value = array[i];
+          if (value === word) {
+            index = i;
+            return index;
+          }
+        }
+        console.log(index);
+      }
+      FindIndex(["apple", "apple", "search", "search"], "apple");
+      //
+      function removeTwoEggsAtFirst(array) {
+        let result = [];
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === "eggs" || array[i] === "Eggs") {
+            count++;
+            if (count <= 2) {
+              continue;
+            }
+          }
+          result.push(array[i]);
+        }
+        console.log(result);
+      }
+      removeTwoEggsAtFirst([
+        "apple",
+        "eggs",
+        "apple",
+        "apple",
+        "eggs",
+        "eggs",
+        "eggs",
+      ]);
+      //
+      function removeTwoEggsAtLast(array) {
+        let result = [];
+        let array2 = array.slice();
+        array2.reverse();
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+          let value = array2[i];
+          if (value === "eggs" || value === "Eggs") {
+            count++;
+            if (count <= 2) {
+              continue;
+            }
+          }
+          result.push(array2[i]);
+        }
+        console.log(result.reverse());
+      }
+      removeTwoEggsAtLast([
+        "apple",
+        "eggs",
+        "apple",
+        "apple",
+        "eggs",
+        "pineapple",
+        "eggs",
+        "eggs",
+      ]);
+      //
+      function FizzBuzz() {
+        for (let i = 1; i <= 20; i++) {
+          if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+          } else if (i % 3 === 0) {
+            console.log("Fizz");
+          } else if (i % 5 === 0) {
+            console.log("Buzz");
+          } else {
+            console.log(i);
+          }
+        }
+      }
+      FizzBuzz();
+      //
+      function FindIndexPart2(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          
+          if (array[i] === word) {
+            return i
+          }
+        }
+        return -1;
+      }
+      
+      function unique(array) {
+        console.log(array)
+        let result = [];
+        for (i = 0; i < array.length; i++) {
+          const word = array[i];
+          if (FindIndexPart2(result, word) === -1) {
+            result.push(word);
+          }
+        }
+        console.log(result);
+      }
+      unique([1, 2, 2, 2, 4, 4, 5, 6, 7, 7]);
+    </script>
+  </body>
+</html>

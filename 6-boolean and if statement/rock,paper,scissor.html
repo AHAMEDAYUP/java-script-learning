@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- rock paper scissor code below -->
+
+   
+   <button
+   onclick="
+   
+    const rN=Math.random();
+    let computerChoice='';
+    if(rN>=0 && rN<1/3){
+        computerChoice='stone';
+    }else if(rN>=1/3 && rN<2/3){
+        computerChoice='paper';
+    }
+    else if(rN>=2/3 && rN<1){
+        computerChoice='scissors';
+    }
+   
+
+    let result='';
+    if(computerChoice==='stone'){
+        result='tie';
+    }else if(computerChoice==='paper'){
+        result='lose';
+    }else if(computerChoice==='scissor'){
+        result='win';
+    
+    }
+    alert(`your move is rock,the computer move is ${computerChoice} , the result gonna be ${result}`);
+    console.log(result);
+   "
+   >rock</button>
+   <button
+   onclick="
+   
+   const rN=Math.random();
+   let computerChoice='';
+   if(rN>=0 && rN<1/3){
+       computerChoice='stone';
+   }else if(rN>=1/3 && rN<2/3){
+       computerChoice='paper';
+   }
+   else if(rN>=2/3 && rN<1){
+       computerChoice='scissors';
+   }
+   
+
+   let result='';
+   if(computerChoice==='stone'){
+       result='win';
+   }else if(computerChoice==='paper'){
+       result='tie';
+   }else if(computerChoice==='scissor'){
+       result='lose';
+   
+   }
+   alert(`your move is paper,the computer move is ${computerChoice} , the result gonna be ${result}`);
+   console.log(result);
+  "
+   >paper</button>
+   <button
+   onclick="
+   
+   const rN=Math.random();
+   let computerChoice='';
+   if(rN>=0 && rN<1/3){
+       computerChoice='stone';
+   }else if(rN>=1/3 && rN<2/3){
+       computerChoice='paper';
+   }
+   else if(rN>=2/3 && rN<1){
+       computerChoice='scissors';
+   }
+   
+
+   let result='';
+   if(computerChoice==='stone'){
+       result='lose';
+   }else if(computerChoice==='paper'){
+       result='win';
+   }else if(computerChoice==='scissor'){
+       result='tie';
+   
+   }
+   alert(`your move is scissor,the computer move is ${computerChoice} , the result gonna be ${result}`);
+   console.log(result);
+  "
+   >scissor</button>
+</body>
+</html>
+

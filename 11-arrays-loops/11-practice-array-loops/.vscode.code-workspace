@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "../../1st"
+		},
+		{
+			"path": "../../5-variables"
+		},
+		{
+			"path": "../../6-boolean and if statement"
+		},
+		{
+			"path": "../../7-functions"
+		},
+		{
+			"path": "../../8-objects"
+		},
+		{
+			"path": "../../9-DOM"
+		},
+		{
+			"path": "../../10-html-css-js"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "11-arrays-loops"
+	}
+}

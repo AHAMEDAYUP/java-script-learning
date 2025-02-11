@@ -1,0 +1,43 @@
+*{
+  font-family: Arial;
+  
+}
+
+.display-todo,.input-grid{
+  display:grid;
+  grid-template-columns: 300px 150px 150px;
+  row-gap: 30px;
+  column-gap: 50px;
+  
+}
+.input-grid{
+  margin-bottom: 30px;
+}
+.todo-input,.add-todo,.due-date{
+  padding: 10px 10px;
+ outline: none;
+  border: none;
+  border-radius: 25px;
+  font-size:15px;
+  border: 1px solid grey;
+}
+.add-todo{
+  background-color:green;
+  color: white;
+}
+.display-todo{
+  font-size: 20px;
+
+}
+.display-todo button{
+  font-size: 20px;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  background-color: red;
+  color: white;
+  padding: 10px 10px;
+}
+.add-todo{
+  font-size: 20px;
+}

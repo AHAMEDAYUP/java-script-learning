@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //function is an value we can store an value in an variable.
+      // just created a variable and stored a function , we just call the function by variable name ( greet() )
+
+      const greet = function () {
+        //function without name is called as anonymous function
+
+        console.log("hello ");
+      };    
+
+      greet(); // it is the callback for the function
+
+      console.log(typeof greet); // checking the type of greet , its value is function
+
+      // storing  a function inside a object
+
+      const object1 = {
+        name: "AhameD",
+        fun: function () {
+          console.log("hello");
+        },
+      };
+      object1.fun(); // callback the function placing inside the object
+      // parameter as a value
+      function param(param) {
+        console.log(param);
+      }
+      param(2);
+      //passing a function as parameter into another function , that means passing a function into a function as parameter
+      function run(param) {
+        param();
+      }
+      run(function () {
+        console.log("hello function inside function");
+      });
+      //setTimeout() it a build in function
+      //runs a function in future after some interval of time
+      //syntax => setTimeout(function(),1000)  1000 means 1000ms = 1sec , we set the interval 1000 or 2000 as per our convenience
+      //it is an asynchronous code
+      setTimeout(function () {
+        console.log("i will display after 3 seconds "); // we just set the the timer for 3sec after 3sec it start run this code
+      }, 3000);
+      console.log("i does not wait for the setTimeout to finish"); // it does not wait for the setTimeout to run
+
+      //setInterval()
+      //syntax setInterval(function(),interval)
+      // it just run the function for every interval of time
+      setInterval(function () {
+        console.log("i just display for every 3sec");
+      }, 3000);
+    </script>
+  </body>
+</html>

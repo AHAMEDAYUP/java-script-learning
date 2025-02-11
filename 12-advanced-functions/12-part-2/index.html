@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="click">click</button>
+    <script>
+      // arrow function
+      // easily to read in some situation of using function
+      // sometimes normal function declaration is used but also in sometime arrow function declaration is used
+      //arrow function does not have the hoisting property
+      const sub = () => {
+        return console.log(5 - 2);
+      };
+      const add = (a, b) => a + b;
+      //normal function
+      function add2(a, b) {
+        return a + b;
+      }
+      // instead of using onclick on the html element use addEventlistener
+      const click = document.querySelector(".click");
+      const event = () => {
+        console.log("hello");
+      };
+      click.addEventListener("click", event);// the event contain the function that we declared above
+      // we can make multiple event using addeventlistener on same html button
+      click.addEventListener("click", () => {
+        console.log("world");
+      });
+      // use removeEventListener to remove an event
+      click.removeEventListener('click',event)// just remove the event that we declared as function above 
+    </script>
+  </body>
+</html>

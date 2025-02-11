@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title class="Title">(2) message</title>
+  </head>
+  <body>
+    <p>btn changes from finish to finished</p>
+    <button class="button-12-c">finish</button>
+    <p>
+      btn changes from finish to loading immediately an then after 1 sec changes
+      to finished
+    </p>
+    <button class="button-12-d">finish</button>
+    <!--  -->
+    <button class="button-12-e">add to cart</button>
+    <p class="para-12-e"></p>
+    <!--  -->
+    <p>title message increment and decrement-title</p>
+    <p>
+      <button class="increment-title">add</button>
+      <button class="decrement-title">remove</button>
+    </p>
+    <script>
+      //
+      const add = function () {
+        console.log(2 + 3);
+      };
+      add();
+      add();
+      //
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+      runTwice(function () {
+        console.log("12.b");
+      });
+      runTwice(add);
+      //12-c
+      let btn12c = document.querySelector(".button-12-c");
+      btn12c.addEventListener("click", function () {
+        setTimeout(function () {
+          btn12c.innerHTML = "finished!";
+        }, 1000);
+      });
+      let btn12d = document.querySelector(".button-12-d");
+      btn12d.addEventListener("click", function () {
+        btn12d.innerHTML = "loading...";
+        setTimeout(function () {
+          btn12d.innerHTML = "finished!";
+        }, 1000);
+      });
+      //12-e
+      // 12-e
+      let timeOutId;
+      let btn12e = document.querySelector(".button-12-e");
+      btn12e.addEventListener("click", function () {
+        let para = document.querySelector(".para-12-e");
+        para.innerHTML = "added to cart";
+        clearInterval(timeOutId);
+        timeOutId = setTimeout(function () {
+          para.innerHTML = "";
+        }, 2000);
+      });
+      //12-f
+      let titleVar = 2;
+      let Title = document.querySelector(".Title");
+      setInterval(function () {
+        if (Title.innerHTML === `(${titleVar}) message`) {
+          Title.innerHTML = "hello";
+        } else {
+          Title.innerHTML = `(${titleVar}) message`;
+        }
+      }, 2000);
+      const incrementTitle = document.querySelector(".increment-title");
+      const decrementTitle = document.querySelector(".decrement-title");
+      incrementTitle.addEventListener("click", function () {
+        titleVar++;
+      });
+      if (titleVar > 0) {
+        decrementTitle.addEventListener("click", function () {
+          titleVar--;
+        });
+      }
+    </script>
+  </body>
+</html>

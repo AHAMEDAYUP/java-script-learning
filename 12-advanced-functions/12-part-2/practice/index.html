@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="button-12-c">finish</button>
+    <script>
+      //12-j
+      let count = 0;
+      const arrowFunc1 = (a, b) => console.log(a * b);
+      arrowFunc1(5, 6);
+      //12-l
+      function positiveNum(num) {
+        num.forEach((value) => {
+          if (value > 0) {
+            count++;
+          }
+        });
+
+        console.log(count);
+      }
+      positiveNum([2, 3, 4, 5, -2]);
+      //12-m
+      function addByNum(array, num) {
+        return console.log(array.map((value) => value + num));
+      }
+      addByNum([1, 2, 3], 2);
+      addByNum([2, 6, 6], 1);
+      //12-n
+      function removeEgg(food) {
+        let eggCount = 0;
+        return console.log(food.filter((value) => value !== "egg"));
+      }
+      removeEgg(["egg", "noodle", "egg", "apple"]);
+      //12-o
+      function removeEggByTWO(food) {
+        let eggCount = 0;
+        return console.log(
+          food.filter((value) => {
+            if (eggCount < 2 && value === "egg") {
+              eggCount++;
+              return false;
+            }
+            return true;
+          })
+        );
+      }
+      removeEggByTWO(["egg", "noodle", "egg","egg", "apple"]);
+      //12-p
+      //modified 12-c
+      let btn12c = document.querySelector(".button-12-c");
+      btn12c.addEventListener("click",  ()=> {
+        setTimeout( ()=> {
+          btn12c.innerHTML = "finished!";
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

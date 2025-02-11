@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- practice -->
+     <!-- km to mile && mile to km -->
+</body>
+<script>
+    function conv(dis,from,to){
+        if(from==='km' && to==='m'){
+            let final=(dis/1.6);
+            return console.log(`${final} ${to}`);
+        }else if(from==='m' && to==='km'){
+            let final=(dis*1.6);
+            return console.log(`${final} ${to}`);
+        }else if(from==='m' && to==='f'){
+            let final=dis*5280;
+            return console.log(`${final} ${to}`);
+        }
+        else if(from==='km' && to==='f'){
+            let final=dis*3281;
+            return console.log(`${final} ${to}`);
+        }else if(from==='f'&& to==='km'){
+            let final=dis/3281;
+            return console.log(`${final} ${to}`);
+        }else if(from==='f' && to==='m'){
+            let final=dis/5280;
+            return console.log(`${final} ${to}`);
+        }else if(from!=='km' && from!=='m' && from!=='f')
+        {
+            return console.log('only coversions between kilo meter ,mile,feet   ');
+        }else if(from===to){
+            return console.log(`entered the same value ( ${from} to  ${to})`);
+        }
+    }
+    conv(1,'km','f');
+    conv(1,'m','km');
+    conv(1,'km','m');
+    conv(1,'mile','lbs');
+    conv(1,'km','km');
+</script>
+</html>

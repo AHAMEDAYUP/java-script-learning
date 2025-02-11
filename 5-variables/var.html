@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="console.log(`cart Quantity = ${cartQuantity}`)">show quantity</button>
+    <button onclick="cart(1)">add to cart</button>
+    <button onclick="cart(2)">+2</button>
+    <button onclick="cart(3)">+3</button>
+    <button onclick="console.log(`cart was rest, 
+cart Quantity = ${cartQuantity=0}`)">reset cart</button>
+    <button onclick="cart(-1)">remove from cart</button>
+    <button onclick="cart(-2)">-2</button>
+    <button onclick="cart(-3)">-3</button>
+
+
+</body>
+<script>
+    // EXERCISES FOR PRACTICE  
+
+    let cartQuantity = 0;
+
+    function cart(value) {
+        if (cartQuantity + value > 10) {
+            alert('cart is full');
+            return;
+        } else if (cartQuantity + value < 0) {
+            alert('not enough item in cart');
+            return;
+        }
+        else {
+            cartQuantity += value;
+            console.log(`cart Quantity=${cartQuantity}`);
+        }
+    }
+    // typeof tells us what type of variable is this numebr or string etc..
+    // console.log(typeof 'cart quantity');
+    // console.log(typeof cartQuantity);  
+    /*const name='ahamed';
+    console.log(`my name is :${name}`);
+    const coffee= 5;
+    const bangels= 2*3;
+    const soup=9;
+    let cost=coffee+bangels+soup;
+    console.log(`cost of food:$${cost}`);
+    let tax=cost*0.1;
+    console.log(`tax(10%):$${tax}`);
+    cost+=tax;
+    console.log(`total cost:${cost}`);*/
+</script>
+
+</html>

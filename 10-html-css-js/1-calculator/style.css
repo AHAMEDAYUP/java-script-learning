@@ -1,0 +1,26 @@
+*{
+  margin: none;
+  padding: none;
+  border:none;
+  color:white;
+}
+body{
+  background-color: black;
+}
+button{
+  background-color: orange;
+
+  padding:30px 30px;
+  border-radius: 50%;
+  margin: 10px 30px;
+  font-size: 20px;
+  font-weight: 400;
+}
+input{
+  color:white;
+  background: transparent;
+  outline: none;;
+  height:50px;
+  width:500px;
+  font-size: 40px;;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let product1={
+        name:'basketball',
+        price:2095,
+        ['delivery-time']:'3-days'
+    };
+    console.log(product1);
+    product1.price+=500;
+    console.log(product1);
+    let product2={
+        name:'basketball 1',
+        price:3500,
+        ['delivery-time']:'3-days'
+    };
+    function compare(a,b){
+        if(product1.price<product2.price){
+            console.log(`${product1.name} is cheaper than ${product2.name}`);
+        }else{
+            console.log(`${product2.name} is cheaper than ${product1.name}`);
+        }
+    }
+   compare(product1,product2);
+    pro1={
+        name:'ball',
+        price:1000
+    };
+    pro2=pro1;
+    console.log(pro1===pro2);
+    pro3={
+        name:'ball',
+        price:1000
+    };
+    pro4={
+        name:'ball',
+        price:1000
+    };
+    console.log(pro3===pro4);
+    product2.price=200;
+    console.log(product2.price);
+    compare(product1,product2);
+
+    //to lower case
+    let a='AHAMED'
+    console.log(a.toLowerCase());
+    //repeat a string 
+    a=a.repeat(3);
+    console.log(a);
+
+    </script>
+</html>

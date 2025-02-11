@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="console.log(`cart Quantity = ${cartQuantity}`) 
+    show()">show quantity</button>
+    <button onclick="cart(1)">add to cart</button>
+    <button onclick="cart(2)">+2</button>
+    <button onclick="cart(3)">+3</button>
+    <button onclick="console.log(`cart was rest, 
+cart Quantity = ${cartQuantity=0}`) 
+show()">reset cart</button>
+    <button onclick="cart(-1)">remove from cart</button>
+    <button onclick="cart(-2)">-2</button>
+    <button onclick="cart(-3)">-3</button>
+    <p class="showquantity"> </p>
+
+
+</body>
+<script>
+    // EXERCISES FOR PRACTICE  
+
+    let cartQuantity = JSON.parse(localStorage.getItem('cartQuantity'))|| 0;
+    let showQuantity=document.querySelector('.showquantity')
+    function show(){
+        showQuantity.innerHTML=`cart quantity=${cartQuantity}`
+    }
+
+    function cart(value) {
+        if (cartQuantity + value > 10) {
+            alert('cart is full');
+            return;
+        } else if (cartQuantity + value < 0) {
+            alert('not enough item in cart');
+            return;
+        }
+        else {
+            cartQuantity += value;
+            console.log(`cart Quantity=${cartQuantity}`);
+        }
+        localStorage.setItem('cartQuantity',JSON.stringify(cartQuantity))
+        show()
+    }
+</script>
+
+</html>

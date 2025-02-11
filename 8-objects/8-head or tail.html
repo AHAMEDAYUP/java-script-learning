@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="
+        playerMove('Head');
+        ">Head</button>
+    <button
+    onclick="
+        playerMove('Tail');"
+    >Tail</button>
+    <button onclick="
+    res.wins=0;
+    res.loss=0;
+    localStorage.removeItem('res');
+    alert('the game was reseted');
+    "
+    >match restart</button>
+
+</body>
+<script>
+   let cm='';
+   
+    let result='';
+    let res=JSON.parse(localStorage.getItem('res'))|| {
+        wins:0,
+        loss:0
+    };
+    function compmove(){ 
+        const N=Math.random();
+        N>=0 && N<0.5 ? cm='Head':cm='Tail';
+        return cm;
+    }
+    function playerMove(a){
+        cm=compmove();
+        if(cm===a){
+            result='we guessed correct';
+            res.wins+=1;
+          alert(`our guess is ${a} ;the computer guess is ${cm} and the result :${result}
+wins=${res.wins},losses=${res.loss}`);
+          
+        }else if(cm!==a){
+             result='we guessed wrong';
+             res.loss+=1;
+            alert(`our guess is ${a} ;the computer guess is ${cm} and the result :${result}
+wins=${res.wins},losses=${res.loss}`);
+        }
+        localStorage.setItem('res',JSON.stringify(res));
+    }
+</script>
+</html>
