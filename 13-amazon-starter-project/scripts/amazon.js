@@ -56,7 +56,7 @@ let cartQuantity=0;
 let AddToCartBtn=document.querySelectorAll('.js-add-to-cart-button');
 AddToCartBtn.forEach((value)=>{
   value.addEventListener('click',function(){
-    let productId=value.dataset.productId;
+    let {productId}=value.dataset; //destructuring
     let matching;
     cart.forEach((item)=>{
       if(item.productId===productId){
@@ -68,10 +68,8 @@ AddToCartBtn.forEach((value)=>{
   if(matching){
     matching.quantity+=1;
   }else{
-    cart.push({
-      productId: productId,
-      quantity:1
-    })
+    cart.push({productId,quantity:1}) //short hand syntax
+   
   }
   console.log(cart)
 
