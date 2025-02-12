@@ -656,5 +656,39 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id:"new-product-1",
+    image:"images/products/backpack.jpg",
+    name:"Backpack-30L-with rain cover",
+    rating:{
+      stars:4.5,
+      count: 30
+    },
+    priceCents: 2500,
+    keywords:[
+      "backpack",
+      "school",
+      "travel",
+      "bags",
+      "luggage",
+      "college"
+    ]
+  },
+  {
+    id:"new-product-2",
+    image:"images/products/umbrella.jpg",
+    name:"Umbrella-large",
+    rating:{
+      stars:4,
+      count: 2000
+    },
+    priceCents: 1000,
+    keywords:[
+      "umbrella",
+      "rain",
+      "weather",
+      "accessories"
+    ]
   }
 ];
