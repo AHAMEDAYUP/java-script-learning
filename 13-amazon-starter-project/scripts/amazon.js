@@ -40,7 +40,7 @@ products.forEach((value)=>{
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart">
+          <div class="added-to-cart js-added-to-cart-${value.id}">
             <img src="images/icons/checkmark.png">
             Added
           </div>
@@ -75,6 +75,12 @@ AddToCartBtn.forEach((value)=>{
 
   cartQuantity+=QuantitySelector;
   document.querySelector('.js-cart-quantity').innerHTML=cartQuantity;
+  const addedToCart=document.querySelector(`.js-added-to-cart-${productId}`);
+  addedToCart.style.opacity='1';
+  addedToCart.style.transition='0.5s';
+  setTimeout(()=>{
+    addedToCart.style.opacity='0';
+  },1000);
   })
 
 })
