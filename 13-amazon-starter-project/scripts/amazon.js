@@ -76,7 +76,7 @@ AddToCartBtn.forEach((value) => {
     let { productId } = value.dataset; //destructuring
     AddToCart(productId)
     showCartQuantity(productId)
-   
+    console.log(cart);
     const addedToCart = document.querySelector(
       `.js-added-to-cart-${productId}`
     ); 
