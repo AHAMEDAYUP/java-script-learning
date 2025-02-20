@@ -1,8 +1,8 @@
-import {cart} from '../data/cart.js';
-import {products} from '../data/products.js';
-let totalHTML='';
-products.forEach((value)=>{
-  totalHTML+=`
+import { cart, AddToCart } from "../data/cart.js";
+import { products } from "../data/products.js";
+let totalHTML = "";
+products.forEach((value) => {
+  totalHTML += `
   <div class="product-container">
           <div class="product-image-container">
             <img class="product-image"
@@ -22,7 +22,7 @@ products.forEach((value)=>{
           </div>
 
           <div class="product-price">
-            $${(value.priceCents /100).toFixed(2)}
+            $${(value.priceCents / 100).toFixed(2)}
           </div>
 
           <div class="product-quantity-container">
@@ -51,44 +51,29 @@ products.forEach((value)=>{
           data-product-id=${value.id}>
             Add to Cart
           </button>
-        </div>`
-})
-document.querySelector('.js-products-grid').innerHTML=totalHTML;
-let cartQuantity=0;
-let theInterval=null;
-let AddToCartBtn=document.querySelectorAll('.js-add-to-cart-button');
-AddToCartBtn.forEach((value)=>{
-  value.addEventListener('click',function(){
-    let {productId}=value.dataset; //destructuring
-    let matching;
-    cart.forEach((item)=>{
-      if(item.productId===productId){
-        matching=item;
-    }
-  })
-  let QuantitySelector=document.querySelector(`.js-quantity-selector-${productId}`);
-  QuantitySelector=Number(QuantitySelector.value);
-  if(matching){
-    matching.quantity+=1;
-  }else{
-    cart.push({productId,quantity:1}) //short hand syntax
+        </div>`;
+});
+document.querySelector(".js-products-grid").innerHTML = totalHTML;
+
+let theInterval = null;
+let AddToCartBtn = document.querySelectorAll(".js-add-to-cart-button");
+
+
+AddToCartBtn.forEach((value) => {
+  value.addEventListener("click", function () {
+    let { productId } = value.dataset; //destructuring
+    AddToCart(productId)
    
-  }
-  console.log(cart)
-
-  cartQuantity+=QuantitySelector;
-  document.querySelector('.js-cart-quantity').innerHTML=cartQuantity;
-  const addedToCart=document.querySelector(`.js-added-to-cart-${productId}`);
-  addedToCart.style.opacity='1';
-  addedToCart.style.transition='0.5s';
-  if(theInterval){
-    clearTimeout(theInterval);
-  }
-   theInterval= setTimeout(()=>{
-    addedToCart.style.opacity='0';
-  },1000);
-  })
-
-
-})
-
+    const addedToCart = document.querySelector(
+      `.js-added-to-cart-${productId}`
+    ); 
+    addedToCart.style.opacity = "1";
+    addedToCart.style.transition = "0.5s";
+    if (theInterval) {
+      clearTimeout(theInterval);
+    }
+    theInterval = setTimeout(() => {
+      addedToCart.style.opacity = "0";
+    }, 1000);
+  });
+});
