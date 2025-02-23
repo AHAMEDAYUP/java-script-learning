@@ -99,7 +99,15 @@ document.querySelectorAll(".js-delete-quantity")
      removeFromCart(productId)
   let remove= document.querySelector(`.js-cart-item-container-${productId}`)
     remove.remove()
-   
+   updateCheckoutItems()
     })
-
+ 
 })
+function updateCheckoutItems(){
+  let quantity=0;
+    cart.forEach((item)=>{
+      quantity+=item.quantity
+    })
+    document.querySelector(".js-return-to-home-link").innerHTML=`${quantity} items`  
+}
+updateCheckoutItems()
