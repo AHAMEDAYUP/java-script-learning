@@ -35,7 +35,7 @@ export function AddToCart(productId) {
     cart.push({ productId, quantity }); //short hand syntax for productId:productId, quantity:quantity
   }
  saveToLocalStorage()
-
+                                                
 }
   // REMOVE FROM CART FUNCTION
     
@@ -51,4 +51,10 @@ export function AddToCart(productId) {
   saveToLocalStorage()
   }
  
- 
+ export function calculateCartQuantity(){
+  let quantity=0;
+  cart.forEach((item)=>{
+    quantity+=item.quantity
+  })
+  return quantity
+ }

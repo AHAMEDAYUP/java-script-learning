@@ -1,4 +1,4 @@
-import {cart,removeFromCart,saveToLocalStorage} from "../data/cart.js";
+import {cart,removeFromCart,saveToLocalStorage,calculateCartQuantity} from "../data/cart.js";
 import {products} from "../data/products.js";
 import { formatMoney } from "./utils/money.js"; 
 let totalHTML = "";
@@ -100,6 +100,7 @@ document.querySelectorAll(".js-delete-quantity")
   let remove= document.querySelector(`.js-cart-item-container-${productId}`)
     remove.remove()
    updateCheckoutItems()
+
     })
  
 })

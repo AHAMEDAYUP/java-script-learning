@@ -1,4 +1,4 @@
-import { cart, AddToCart } from "../data/cart.js";
+import { cart, AddToCart, calculateCartQuantity } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatMoney } from "./utils/money.js";
 let totalHTML = "";
@@ -59,24 +59,18 @@ document.querySelector(".js-products-grid").innerHTML = totalHTML;
 let theInterval = null;
 
 let AddToCartBtn = document.querySelectorAll(".js-add-to-cart-button");
-let totalQuantity = 0;
 
-function showCartQuantity(productId) {
-  let jsCartQuantity = document.querySelector(".js-cart-quantity");
-
-  let QuantitySelector = document.querySelector(
-    `.js-quantity-selector-${productId}`
-  );
-  QuantitySelector = Number(QuantitySelector.value);
-  totalQuantity += QuantitySelector;
-  jsCartQuantity.innerHTML = totalQuantity;
+function showCartQuantity() {
+ 
+  const cartQuantity = calculateCartQuantity();
+  document.querySelector(".js-cart-quantity").textContent = cartQuantity;
 }
-
+showCartQuantity();
 AddToCartBtn.forEach((value) => {
   value.addEventListener("click", function () {
     let { productId } = value.dataset; //destructuring
     AddToCart(productId)
-    showCartQuantity(productId)
+    showCartQuantity()
     console.log(cart);
     const addedToCart = document.querySelector(
       `.js-added-to-cart-${productId}`
@@ -89,5 +83,6 @@ AddToCartBtn.forEach((value) => {
     theInterval = setTimeout(() => {
       addedToCart.style.opacity = "0";
     }, 1000);
+  
   });
 });
