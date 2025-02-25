@@ -209,3 +209,25 @@
   margin-top: 11px;
   margin-bottom: 15px;
 }
+.quantity-input{
+  width: 30px;
+  display: none;
+  
+}
+.save-quantity-link{
+  display: none;
+}
+
+/* .js-update-input-save .quantity-input {
+  display: initial;
+} */
+
+.js-update-input-save .quantity-input,.js-update-input-save .save-quantity-link {
+  display: inline;
+}
+.js-update-input-save .update-quantity-link {
+  display: none;
+}
+.js-update-input-save .quantity-label{
+  display: none;
+}
