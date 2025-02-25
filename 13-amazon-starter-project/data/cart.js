@@ -58,3 +58,13 @@ export function AddToCart(productId) {
   })
   return quantity
  }
+
+export function updateItemQuantity(productId,newQuantity){
+  cart.forEach((item)=>{
+    if(item.productId===productId){
+      item.quantity=newQuantity
+    }
+  })
+  saveToLocalStorage()
+ 
+}
